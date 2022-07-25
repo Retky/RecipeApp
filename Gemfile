@@ -66,7 +66,7 @@ end
 group :development do
   # Gem increase performance by avoiding N+1 queries
   gem 'bullet'
-  
+
   # Gem for test email confirmation
   gem 'letter_opener'
 
