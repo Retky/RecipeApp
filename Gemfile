@@ -3,6 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Gems used in the project
+# Gem for the authorizations
+gem 'cancancan'
+
+# Gem for the authentication
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
@@ -54,6 +61,9 @@ group :development, :test do
 end
 
 group :development do
+  # Gem increase performance by avoiding N+1 queries
+  gem 'bullet'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
