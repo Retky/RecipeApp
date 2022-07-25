@@ -1,0 +1,16 @@
+<div class="form_container">
+<h1>Add Food</h1>
+<%= form_with model: @food, class: "form" do |form| %>
+  <h3>Name:</h3>
+  <%= form.text_field :name, placeholder: "Add Name", required: true, class: "text_field" %>
+  <h3>Measurement unit:</h3>
+  <%= form.select :measurement_unit, ['kg', 'lb'], required: true, class: "select_box" %>
+  <h3>Price:</h3>
+  <%= form.number_field :price, in: 0.0..20.0, step: 0.1, required: true, class: "text_field" %>
+  <h3>Quantity:</h3>
+  <%= form.number_field :quantity, in: 1..100, step: 1, required: true, class: "text_field" %>
+  <div class="submit_button_container">
+    <%= form.submit "Add", class: "button submit" %>
+  </div>
+<% end %>
+</div>
