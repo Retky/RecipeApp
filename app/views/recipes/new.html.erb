@@ -13,7 +13,7 @@
   <body>
     <h1>New Recipe</h1>
     <div>
-      <%= form_with model: @recipe, url: user_recipes_path, method: :recipe, local: true, scope: :post do |f| %>
+      <%= form_with model: @recipe, url: user_recipes_path, method: :post do |f| %>
         <%= f.hidden_field :user_id, value: @user.id %>
         <%= f.label :name %><br />
         <%= f.text_field :name %><br />
