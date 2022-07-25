@@ -66,6 +66,9 @@ end
 group :development do
   # Gem increase performance by avoiding N+1 queries
   gem 'bullet'
+  
+  # Gem for test email confirmation
+  gem 'letter_opener'
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
