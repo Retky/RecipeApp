@@ -10,7 +10,7 @@ a:link {
   text-decoration: none;
   color: black;
 }
-  
+
 .link_class_button {
   color: white;
 }
@@ -38,7 +38,7 @@ table {
 
 thead tr {
   background-color: $orange;
-  color: #ffffff;
+  color: #fff;
   text-align: left;
 }
 
@@ -48,7 +48,7 @@ td {
 }
 
 tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
 }
 
 tbody tr:nth-of-type(even) {
@@ -58,7 +58,6 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
   border-bottom: 2px solid $orange;
 }
-
 
 .button {
   background-color: $orange;

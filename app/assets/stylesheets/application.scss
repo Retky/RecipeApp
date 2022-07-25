@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+// .submit_button_container_loggin {
+
+// }
+
+.form_container {
+  margin: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  width: 70%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text_field2 {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 1rem;
+  width: 90%;
+}
+
+.field2 {
+  margin: 1rem 0;
+}
