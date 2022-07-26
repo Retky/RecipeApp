@@ -6,11 +6,36 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "recipe_details", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <h1>recipex show</h1>
+    <div class="title-recipe-container">
+      <h1><%= @recipe.name %></h1>
+    </div>
+    <%# cancancan %>
+    <div class="recipe-detail-container">
+      <div>
+        <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+        <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+        <p>Description: <%= @recipe.description %></p>
+      </div>
+      <div>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <%# cancancan %>
+    <div class="buttons-container">
+      <button class="button" alt="Generate shopping list">Generate shopping list</button>
+      <%= render "partials/add_ingredient_button" %>
+    </div>
+    <hr>
+    <div class="table-container">
+      <%= render "partials/ingredients_table", food: @food %>
+    </div>
   </body>
 </html>
