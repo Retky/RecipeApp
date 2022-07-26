@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <h1>recipex index</h1>
+    <div>
+      <button type="button">Add Recipe</button>
+    </div>
+    <% unless @recipes.nil? %>
+      <% @recipes.each do |recipe| %>
+        <div>
+          <div>
+          <%= link_to recipe.name, user_recipe_path(@user, recipe) %>
+          <!-- can -->
+            <%= button_to 'Remove', user_recipe_path(@user,recipe), method: :delete %>
+          <!-- end -->
+          </div>
+          <div>
+            <%= recipe.description %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <%= button_to "New Recipe", new_user_recipe_path(@user), method: :get %>
   </body>
 </html>
