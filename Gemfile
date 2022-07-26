@@ -19,9 +19,6 @@ gem 'rails', '~> 7.0.3'
 # Gem for the linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-# Use SASS for stylesheets
-gem 'sassc-rails'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
