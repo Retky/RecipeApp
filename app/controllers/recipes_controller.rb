@@ -10,9 +10,7 @@ class RecipesController < ApplicationController
   def show; end
 
   def new
-    @user = current_user
     @recipe = Recipe.new
-    render :new, locals: { recipe: @recipe }
   end
 
   def create

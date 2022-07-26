@@ -6,31 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "recipes", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <div>
-      <button type="button">Add Recipe</button>
-    </div>
     <% unless @recipes.nil? %>
       <% @recipes.each do |recipe| %>
         <% if can? :read, recipe %>
-        <div>
-          <div>
-          <%= link_to recipe.name, user_recipe_path(@user, recipe) %>
+        <div class="recipe">
+          <div class="recipeName">
+          <h3><%= link_to recipe.name, user_recipe_path(@user, recipe) %></h3>
           <% if can? :destroy, recipe %>
-            <%= button_to 'Remove', user_recipe_path(@user,recipe), method: :delete %>
+            <%= button_to 'Remove', user_recipe_path(@user,recipe), method: :delete, class: "removeBtn" %>
           <% end %>
           </div>
-          <div>
+          <div class="description">
             <%= recipe.description %>
           </div>
         </div>
         <% end %>
       <% end %>
     <% end %>
-    <%= button_to "New Recipe", new_user_recipe_path(@user), method: :get %>
+    <%= button_to "New Recipe", new_user_recipe_path, method: :get, class: "button" %>
   </body>
 </html>

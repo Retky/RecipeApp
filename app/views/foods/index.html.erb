@@ -12,9 +12,7 @@
 
   <body>
     <div class="add-food-button">
-    <button class="button">
-      <%= link_to "Add Food", new_user_food_path, {:class => "link_class_button"} %>
-    </button>
+      <%= button_to "Add Food", new_user_food_path, method: :get, class: "link class button" %>
     </div>
     <div class="table-container">
     <table>
