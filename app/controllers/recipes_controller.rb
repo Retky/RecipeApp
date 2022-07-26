@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @user = current_user
     if @recipe.save
-      flash[:notice] = "Recipe successfully created!"
+      flash[:notice] = 'Recipe successfully created!'
       redirect_to user_recipes_path(@user)
     else
       render :new, locals: { recipe: @recipe }
@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(params[:user_id])
     @recipe.destroy
-    flash[:notice] = "Recipe successfully deleted  >:"
+    flash[:notice] = 'Recipe successfully deleted  >:'
     redirect_to user_recipes_path(@user)
   end
 
