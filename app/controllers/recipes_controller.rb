@@ -5,7 +5,15 @@ class RecipesController < ApplicationController
     render :index, locals: { recipes: @recipes }
   end
 
-  def show; end
+  def show
+    @user = current_user
+    # @foods = Food.all
+    @food = @user.foods
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods
+    # @food = Food.find(params[:food_id])
+    # @foods = @food.
+  end
 
   def new
     @user = current_user
