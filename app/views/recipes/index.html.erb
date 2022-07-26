@@ -19,9 +19,9 @@
         <div>
           <div>
           <%= link_to recipe.name, user_recipe_path(@user, recipe) %>
-          <!-- can -->
+          <% if can? :destroy, recipe %>
             <%= button_to 'Remove', user_recipe_path(@user,recipe), method: :delete %>
-          <!-- end -->
+          <% end %>
           </div>
           <div>
             <%= recipe.description %>
