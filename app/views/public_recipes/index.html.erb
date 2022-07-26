@@ -6,20 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "recipes", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+  <h1>Public Recipes</h1>
     <% unless @public_recipes.nil? %>
       <% @public_recipes.each do |recipe| %>
-        <div>
-          <%= link_to recipe.name, user_recipe_path(recipe.user.id, recipe) %><br />
-          <small>By <%= recipe.user.name %></small>
-        </div>
-        <div>
-          <p>Total food items:</p>
-          <p>Total price:</p>
+        <div class="recipe">
+          <div class="recipeName">
+            <h3><%= link_to recipe.name, user_recipe_path(recipe.user.id, recipe) %><br /></h3>
+            <small>By <%= recipe.user.name %></small>
+          </div>
+          <div>
+            <p>Total food items:</p>
+            <p>Total price:</p>
+          </div>
         </div>
       <% end %>
     <% end %>
