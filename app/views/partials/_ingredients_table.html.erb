@@ -19,8 +19,10 @@
         <td>
           <div class="ingredient-buttons-container">
             <%=button_to "Delete", user_recipe_recipe_food_path(@user.id, recipe_food.recipe_id, recipe_food.id), :method => :delete, class: 'delete-button' %>
-            <%=button_to "Modify", class: 'delete-button' %>
+            <button class="delete-button">
+            <%=link_to "Modify", edit_recipe_food_path(recipe_food.id), class: 'delete-button' %>
             <%# {:controller => :foods, :action => 'destroy', :id => food.id, :method => :delete, class: 'delete-button' %>
+            </button>          
           </div>
         </td>
       </tr>
