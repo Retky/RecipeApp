@@ -11,6 +11,17 @@
   </head>
 
   <body>
-    <h1>Public recipes</h1>
+    <% unless @public_recipes.nil? %>
+      <% @public_recipes.each do |recipe| %>
+        <div>
+          <%= link_to recipe.name, user_recipe_path(recipe.user.id, recipe) %><br />
+          <small>By <%= recipe.user.name %></small>
+        </div>
+        <div>
+          <p>Total food items:</p>
+          <p>Total price:</p>
+        </div>
+      <% end %>
+    <% end %>
   </body>
 </html>
