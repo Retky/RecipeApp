@@ -1,7 +1,10 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @food = @user.foods
+    redirect_to user_foods_path(current_user) unless User.find(params[:user_id]) == current_user
   end
 
   def new
