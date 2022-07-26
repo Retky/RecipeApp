@@ -1,0 +1,29 @@
+<table>
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @recipe_foods.each do |recipe_food| %>
+      <% food = Food.find(recipe_food.food_id)%>
+      <% value = food.price * recipe_food.quantity %>
+      <% %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
+        <td>$ <%= value %></td>
+        <td>
+          <div class="ingredient-buttons-container">
+            <%=button_to "Delete", user_recipe_recipe_food_path(@user.id, recipe_food.recipe_id, recipe_food.id), :method => :delete, class: 'delete-button' %>
+            <%=button_to "Modify", class: 'delete-button' %>
+            <%# {:controller => :foods, :action => 'destroy', :id => food.id, :method => :delete, class: 'delete-button' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>
