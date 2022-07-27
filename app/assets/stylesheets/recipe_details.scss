@@ -29,36 +29,33 @@ $grey: #52616b;
   display: flex;
   justify-content: center;
 }
- 
-  .btn {
-    border-radius: 5px;
 
-  }
+.btn {
+  border-radius: 5px;
+}
 
-  .public-button {
-    margin-block-start: 0.7em;
-  }
+.public-button {
+  margin-block-start: 0.7em;
+}
 
-  .btn_recipe_state.true {
-    width: 60px;
-    height: 25px;
-    background-image: linear-gradient(to right, $orange 70%, silver 70%);
-  }
-  
-  .btn_recipe_state.false {
-    width: 60px;
-    height: 25px;
-    background-image: linear-gradient(to right, silver 30%, $grey 30%);
-  }
+.btn_recipe_state.true {
+  width: 60px;
+  height: 25px;
+  background-image: linear-gradient(to right, $orange 70%, silver 70%);
+}
 
-  .public-container {
-    display: flex;
-    justify-content: center;
+.btn_recipe_state.false {
+  width: 60px;
+  height: 25px;
+  background-image: linear-gradient(to right, silver 30%, $grey 30%);
+}
 
-  
-  }
+.public-container {
+  display: flex;
+  justify-content: center;
+}
 
-  .public-label {
-    display: flex;
-    margin-right: 1rem;
-  }
+.public-label {
+  display: flex;
+  margin-right: 1rem;
+}

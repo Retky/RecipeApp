@@ -9,7 +9,8 @@ class RecipeFoodsController < ApplicationController
     @food = Food.find_by(id: recipe_food_params[:food_id])
     # @recipe = Recipe.find_by(id: recipe_food_params[:recipe_id])
     # @recipe = Recipe.find_by(id: params[:recipe_id])
-    @recipe_food = RecipeFood.new(food_id: @food, quantity: recipe_food_params[:quantity], recipe_id: recipe_food_params[:recipe_id])
+    @recipe_food = RecipeFood.new(food_id: @food, quantity: recipe_food_params[:quantity],
+                                  recipe_id: recipe_food_params[:recipe_id])
     # @recipe_food.recipe_id = @recipe.id
     if @recipe_food.save
       flash[:notice] = 'Recipe food successfully created!'
@@ -18,7 +19,6 @@ class RecipeFoodsController < ApplicationController
       render :new
     end
   end
- 
 
   def destroy
     @recipe_food = RecipeFood.find(params[:id])
