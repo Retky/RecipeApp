@@ -11,10 +11,12 @@ user1 = User.create(name: "Juan")
 # Foods
 
 food1 = Food.create(name: "apple", measurement_unit: "pz", price: 1.0, quantity: 1, user: user1)
-
+food2 = Food.create(name: "jelly", measurement_unit: "pz", price: 1.0, quantity: 1, user: user1)
 # Recipes
 
 recipe1 = Recipe.create(name: "apple pie", preparation_time: 1.5, cooking_time: 1.0, description: "apple pie", public: true, user: user1)
+
 # RecipeFoods
 
 recipe_food1 = RecipeFood.create(food: food1, recipe: recipe1, quantity: 1)
+recipe_food1 = RecipeFood.create(food: food2, recipe: recipe1, quantity: 7)

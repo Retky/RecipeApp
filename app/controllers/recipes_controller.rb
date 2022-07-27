@@ -7,7 +7,15 @@ class RecipesController < ApplicationController
     render :index, locals: { recipes: @recipes }
   end
 
-  def show; end
+  def show
+    @user = current_user
+    # @foods = Food.all
+    @food = @user.foods
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods
+    # @food = Food.find(params[:food_id])
+    # @foods = @food.
+  end
 
   def new
     @recipe = Recipe.new
@@ -30,6 +38,13 @@ class RecipesController < ApplicationController
     @recipe.destroy
     flash[:notice] = 'Recipe successfully deleted  >:'
     redirect_to user_recipes_path(@user)
+  end
+
+  def toggle_public
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+    @recipe.toggle! :public
+    redirect_to user_recipe_path(@user.id, @recipe.id)
   end
 
   private
