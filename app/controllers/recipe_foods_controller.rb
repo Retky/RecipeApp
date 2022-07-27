@@ -4,7 +4,6 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    if current_user
     @user = current_user
     @recipe = @user.recipes.find(params[:recipe_id])
     @food = @user.foods.find_by(id: recipe_food_params[:food_id])
@@ -19,7 +18,6 @@ class RecipeFoodsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  end
 
   def destroy
     @user = current_user
@@ -32,8 +30,6 @@ class RecipeFoodsController < ApplicationController
   def edit
     @recipe_food = RecipeFood.find(params[:id])
   end
-
-
 
   def update
     @user = current_user
