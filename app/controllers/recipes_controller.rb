@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @user = current_user
+    @user = User.find(params[:user_id])
     @recipes = @user.recipes
     render :index, locals: { recipes: @recipes }
   end
@@ -16,9 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @recipe = Recipe.new
-    render :new, locals: { recipe: @recipe }
   end
 
   def create

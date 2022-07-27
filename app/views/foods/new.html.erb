@@ -15,7 +15,7 @@
   </div>
     <div class="form-row">
   <h3>Quantity:</h3>
-  <%= form.number_field :quantity, in: 1..100, step: 1, required: true, class: "text_field" %>
+  <%= form.number_field :quantity, in: 0.00..1000.00, step: 1, required: true, class: "text_field" %>
     </div>
   <div class="submit_button_container">
     <%= form.submit "Add", class: "button submit" %>
