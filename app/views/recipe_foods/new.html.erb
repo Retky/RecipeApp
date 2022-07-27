@@ -1,44 +1,33 @@
 <div class="form_container">
   <h1>Add Ingredient</h1>
-  <%= form_with url: "/users/#{:user_id}/recipes/#{:recipe_id}/recipe_foods", class: "form" do |form| %>
+  <%= form_with url: user_recipe_recipe_foods_path, method: :post, class: "form" do |form| %>
     <h3>Select Food:</h3>
     <div class="form-row">
       
       <div class="table-container">
-        <% @user = current_user %>
-        <% @recipe = Recipe.find(params[:recipe_id]) %>
-        <% @food = @user.foods %>
-    <%# <%= form.number_field :food_id, in: 1..100, step: 1, required: true, class: "text_field" %>
-    <%# <%= form.collection_check_boxes :food_id, @food, :id, :name%>
-    <%# <ul>
-    <%= form.collection_check_boxes :food_id, @food, :name, :name do |b| %>
-  <%# <li>
-    <%= b.label %>
-    <%# <%= b.check_box %>
-  <%# </li>
-    <% end %>
-    <%# </ul> %>
-        <table>
-          <thead>
-          <tr>
-          <th>Food</th>
-          <th>Quantity</th>
-          </tr>
-          </thead>
-          <tbody>
-          <%= form.collection_check_boxes :food_id, @food, :name, :name do |b| %>
-            <tr>
-            <td><%= b.label %></td>
-            <td><%= b.check_box %></td>
-            <% end %>
-          </tr>
-          </tbody>
-        </table>
+        <%# <% @user = current_user %> %>
+        <%# <% @recipe = Recipe.find(params[:recipe_id]) %> %>
+        <%# <% @food = @user.foods %> %>
+    <%= form.number_field :food_id, in: 1..100, step: 1, required: true, class: "text_field" %>
+    # <%# <%= form.collection_check_boxes :food_id, @food, :id, :name%>
+    # <%# <ul>
+    # <%= form.collection_check_boxes :food_id, @food, :name, :name do |b| %>
+  # <%# <li>
+  #   <%= b.label %>
+  #   <%# <%= b.check_box %>
+  # <%# </li>
+  #   <% end %>
+  #   <%# </ul> %>
+        
       </div>
     </div>
     <div class="form-row">
       <h3>Quantity:</h3>
       <%= form.number_field :quantity, in: 1..100, step: 1, required: true, class: "text_field" %>
+    </div>
+     <div class="form-row">
+      <h3>Recipe:</h3>
+      <%= form.number_field :recipe_id, in: 1..100, step: 1, required: true, class: "text_field" %>
     </div>
     <div class="submit_button_container">
       <%= form.submit "Add", class: "button submit" %>

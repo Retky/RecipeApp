@@ -22,21 +22,10 @@
         <p>Description: <%= @recipe.description %></p>
       </div>
       <div class="public-container">
-      <div class="public-label">
+        <div class="public-label">
         <p>Public:</p>
         </div>
-        <div>
-        <label class="switch">
-          <% if @recipe.public %>
-          <input type="checkbox" checked>
-          <%# <% link_to "/toggle_public/#{@recipe.id}", method: :put %> %>
-          <% else %>
-          <input type="checkbox">
-          <%end%>
-          <span class="slider round"></span>
-        </label>
-        </div>
-        <div>
+        <div class="public-button">
         <%= button_to "", "/toggle_public/#{@recipe.id}", class:"btn btn_recipe_state #{@recipe.public}"%>
         </div>
       </div>
