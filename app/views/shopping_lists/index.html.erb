@@ -6,22 +6,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "shopping", "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <h1>Shopping list</h1>
-    <% @recipes.each do |recipe| %>
-      <h3><%= recipe.name %></h3>
-      <% @food_items.each do |food| %>
-        <% if recipe.name == food.recipe_name %>
-          <%= food.food_name %>
-          <%= food.recipe_quantity - food.current_quantity %>
-          <%= food.measurement_unit %>
-          $ <%= food.price*(food.recipe_quantity - food.current_quantity) %><br />
-        <% end %>
+    <div class="shopLists">
+      <% @recipes.each do |recipe| %>
+        <h3><%= recipe.name %></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Food</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <% @food_items.each do |food| %>
+            <% if recipe.name == food.recipe_name %>
+              <tr>
+                <td><%= food.food_name %></td>
+                <td><%= food.recipe_quantity - food.current_quantity %><%= food.measurement_unit %></td>
+                <td>$ <%= food.price*(food.recipe_quantity - food.current_quantity) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
       <% end %>
-    <% end %>
+    </div>
   </body>
 </html>
