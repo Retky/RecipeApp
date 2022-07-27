@@ -12,5 +12,16 @@
 
   <body>
     <h1>Shopping list</h1>
+    <% @recipes.each do |recipe| %>
+      <h3><%= recipe.name %></h3>
+      <% @food_items.each do |food| %>
+        <% if recipe.name == food.recipe_name %>
+          <%= food.food_name %>
+          <%= food.recipe_quantity - food.current_quantity %>
+          <%= food.measurement_unit %>
+          $ <%= food.price*(food.recipe_quantity - food.current_quantity) %><br />
+        <% end %>
+      <% end %>
+    <% end %>
   </body>
 </html>
