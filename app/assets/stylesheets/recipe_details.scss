@@ -91,3 +91,27 @@ $grey: #52616b;
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .btn_recipe_state.true {
+    width: 50px;
+    height: 20px;
+    background-image: linear-gradient(to right, green 70%, silver 70%);
+  }
+  
+  .btn_recipe_state.false {
+    width: 50px;
+    height: 20px;
+    background-image: linear-gradient(to right, silver 30%, red 30%);
+  }
+
+  .public-container {
+    display: flex;
+    justify-content: center;
+
+  
+  }
+
+  .public-label {
+    display: flex;
+    margin-right: 1rem;
+  }

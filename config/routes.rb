@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:new, :create, :destroy]
   resources :recipe_foods, only: [:edit, :update]
+  # resources :recipes, only: [:toggle_public]
+  post '/toggle_public/:id', to: 'recipes#toggle_public'
 end
