@@ -17,6 +17,9 @@
 // .submit_button_container_loggin {
 
 // }
+$orange: #fc6011;
+$blue: #11263c;
+$grey: #52616b;
 
 .form_container {
   margin: 0.5rem 1rem;
@@ -48,4 +51,63 @@
 
 .field2 {
   margin: 1rem 0;
+}
+
+a:link {
+  color: #fff;
+  width: max-content;
+}
+.nav-bar,
+a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-bar,
+a:hover { color: #cfcfcf; }
+
+.nav-bar {
+  display: flex;
+  background-color: $blue;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.name {
+  flex: 2;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.list {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  justify-content: end;
+}
+
+.list .item {
+  display: inline-block;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
