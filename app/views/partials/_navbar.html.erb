@@ -1,10 +1,17 @@
  <nav class="nav-bar">
             <div class="name">Recipe App</div>
+            <% if user_signed_in? %>
             <ul class="list">
-                <li class="item"><a class="nav-link"><%= link_to "Food", user_foods_path, method: :get%></a></li>
-                <li class="item"><a class="nav-link"><%= link_to "Recipies", user_recipes_path, method: :get%></a></li>
-                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Public Recipies", user_public_recipes_path, method: :get%></a></li>
-                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Shopping List", user_shopping_lists_path, method: :get%></a></li>
+                <li class="item"><a class="nav-link"><%= link_to "Food", user_foods_path(current_user), method: :get%></a></li>
+                <li class="item"><a class="nav-link"><%= link_to "Recipies", user_recipes_path(current_user), method: :get%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Public Recipies", public_recipes_path, method: :get%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Shopping List", user_shopping_lists_path(current_user), method: :get%></a></li>
                 <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Log Out", destroy_user_session_path%></a></li>
             </ul>
+            <% else %>
+            <ul class="list">
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Sign Up", new_user_registration_path, method: :get%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Log In", new_user_session_path, method: :get%></a></li>
+            </ul>
+            <% end %>
 </nav>
