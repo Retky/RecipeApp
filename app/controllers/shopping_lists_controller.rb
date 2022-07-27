@@ -14,19 +14,23 @@ class ShoppingListsController < ApplicationController
       @count += (item.price * item.recipe_quantity)
     end
 
+    @total_price = total_price
+  end
+
+  def total_price
     @total_price = 0
     @recipes.each do |recipe|
       @total_price += recipe.total_price
     end
     @user.foods.each do |food|
-      if @food_items.find_by(food_id: food.id)
-        if food.quantity <= @food_items.find_by(food_id: food.id).recipe_quantity
-          @total_price -= (food.price * food.quantity)
-        else
-          @total_price -= food.price * (@food_items.find_by(food_id: food.id).recipe_quantity)
-        end
-      end
-    end
+      next unless @food_items.find_by(food_id: food.id)
 
+      @total_price -= if food.quantity <= @food_items.find_by(food_id: food.id).recipe_quantity
+                        (food.price * food.quantity)
+                      else
+                        food.price * @food_items.find_by(food_id: food.id).recipe_quantity
+                      end
+    end
+    @total_price
   end
 end
