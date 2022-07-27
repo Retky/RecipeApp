@@ -11,10 +11,15 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create] do
     resources :foods, only: [:index, :new, :create, :destroy]
-    resources :recipes, only: [:index, :new, :create, :destroy, :show]
+    resources :recipes, only: [:index, :new, :create, :destroy, :show] do
+      resources :recipe_foods, only: [:new, :create, :destroy]
+    end
     resources :public_recipes, only: [:index]
     resources :shopping_lists, only: [:index]
   end
 
   resources :foods, only: [:new, :create, :destroy]
+  resources :recipe_foods, only: [:edit, :update]
+  # resources :recipes, only: [:toggle_public]
+  post '/toggle_public/:id', to: 'recipes#toggle_public'
 end

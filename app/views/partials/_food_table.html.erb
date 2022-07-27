@@ -1,0 +1,24 @@
+<table>
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement unit</th>
+      <th>Unit price</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @food.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td>$ <%= food.price %></td>
+        <td>
+          <div>
+            <%=button_to "Delete", {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete, class: 'delete-button' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

@@ -12,35 +12,10 @@
 
   <body>
     <div class="add-food-button">
-    <button class="button">
-      <%= link_to "Add Food", new_user_food_path, {:class => "link_class_button"} %>
-    </button>
+      <%= render "partials/add_food_button" %>
     </div>
     <div class="table-container">
-    <table>
-    <thead>
-    <tr>
-      <th>Food</th>
-      <th>Measurement unit</th>
-      <th>Unit price</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @food.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.measurement_unit %></td>
-        <td>$ <%= food.price %></td>
-        <td>
-          <div>
-            <%=button_to "Delete", {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete, class: 'delete-button' %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-    </table>
+      <%= render "partials/food_table", food: @food %>
     </div>
   </body>
 </html>
