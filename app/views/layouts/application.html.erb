@@ -11,7 +11,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
       <%= render "partials/navbar" %>
+    <% else %>
+      <%= render "partials/navbar_guest" %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
