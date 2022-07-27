@@ -13,7 +13,7 @@
   <body>
     <h1>Shopping list</h1>
     <div>
-      <p>Amount of food items to buy: <%= @food_items.uniq.count %><p>
+      <p>Amount of food items to buy: <%= @food_items.length %><p>
       <p>Total value of food needed: <%= @total_price %><p>
     </div>
     <div class="shopLists">
@@ -28,11 +28,11 @@
             </tr>
           </thead>
           <% @food_items.each do |food| %>
-            <% if recipe.name == food.recipe_name %>
+            <% if recipe.name == food.recipe_name && food.current_quantity < food.recipe_quantity %>
               <tr>
                 <td><%= food.food_name %></td>
-                <td><%= food.recipe_quantity %><%= food.measurement_unit %></td>
-                <td>$ <%= food.price*(food.recipe_quantity) %></td>
+                <td><%= food.recipe_quantity - food.current_quantity %><%= food.measurement_unit %></td>
+                <td>$ <%= food.price*(food.recipe_quantity - food.current_quantity) %></td>
               </tr>
             <% end %>
           <% end %>
