@@ -21,17 +21,30 @@
         <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
         <p>Description: <%= @recipe.description %></p>
       </div>
-      <div>
+      <div class="public-container">
+      <div class="public-label">
+        <p>Public:</p>
+        </div>
+        <div>
         <label class="switch">
+          <% if @recipe.public %>
+          <input type="checkbox" checked>
+          <%# <% link_to "/toggle_public/#{@recipe.id}", method: :put %> %>
+          <% else %>
           <input type="checkbox">
+          <%end%>
           <span class="slider round"></span>
         </label>
+        </div>
+        <div>
+        <%= button_to "", "/toggle_public/#{@recipe.id}", class:"btn btn_recipe_state #{@recipe.public}"%>
+        </div>
       </div>
     </div>
     <%# cancancan %>
     <div class="buttons-container">
-      <button class="button" alt="Generate shopping list">Generate shopping list</button>
-      <%= render "partials/add_ingredient_button" %>
+      <button class="button" alt="Generate shopping list">Generate shopping list></button>
+      <%= render "partials/add_ingredient_button", user: @user, recipe: @recipe %>
     </div>
     <hr>
     <div class="table-container">
