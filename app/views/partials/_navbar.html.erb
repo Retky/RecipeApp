@@ -2,11 +2,12 @@
             <div class="name">Recipe App</div>
             <% if user_signed_in? %>
             <ul class="list">
-                <li class="item"><a class="nav-link"><%= link_to "Food", user_foods_path(current_user), method: :get%></a></li>
-                <li class="item"><a class="nav-link"><%= link_to "Recipies", user_recipes_path(current_user), method: :get%></a></li>
-                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Public Recipies", public_recipes_path, method: :get%></a></li>
-                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Shopping List", user_shopping_lists_path(current_user), method: :get%></a></li>
-                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Log Out", destroy_user_session_path%></a></li>
+                <li class="item"><a class="nav-link"><%= link_to "Food", user_foods_path(current_user), method: :get, class: 'link'%></a></li>
+                <li class="item"><a class="nav-link"><%= link_to "Recipies", user_recipes_path(current_user), method: :get, class: 'link'%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Public Recipies", public_recipes_path(current_user), method: :get, class: 'link'%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Shopping List", user_shopping_lists_path(current_user), method: :get, class: 'link'%></a></li>
+                <li class="item"><a class="nav-link" href="#portfolio-form-link"><%= link_to "Log Out", destroy_user_session_path, class: 'link'%></a></li>
+
             </ul>
             <% else %>
             <ul class="list">

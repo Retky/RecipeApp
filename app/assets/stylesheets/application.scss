@@ -21,6 +21,15 @@ $orange: #fc6011;
 $blue: #11263c;
 $grey: #52616b;
 
+a,
+a:link {
+  color: white;
+}
+
+.link {
+  width: max-content;
+}
+
 .form_container {
   margin: 0.5rem 1rem;
   display: flex;
@@ -54,7 +63,7 @@ $grey: #52616b;
 }
 
 .nav-bar,
-a {
+.nav-link {
   color: #fff;
   text-decoration: none;
   text-align: center;
@@ -62,8 +71,8 @@ a {
   width: 100%;
 }
 
-a:link {
-  color: #fff;
+.nav-link {
+  color: $orange;
   width: max-content;
 }
 
