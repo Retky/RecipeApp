@@ -7,7 +7,8 @@ RSpec.describe 'Food index page', type: :feature do
       @user = User.new(name: 'retky', email: 'retky@test.com', password: '123456')
       @user.skip_confirmation!
       @user.save!
-      @recipe3 = Recipe.create(name: 'Orange Chicken', description: 'A popular Chinese dish', user_id: @user.id, public: true)
+      @recipe3 = Recipe.create(name: 'Orange Chicken', description: 'A popular Chinese dish', user_id: @user.id,
+                               public: true)
       @food1 = Food.create(name: 'Chicken', measurement_unit: 'kg', quantity: '1', price: '15', user_id: @user.id)
       @food2 = Food.create(name: 'Orange', measurement_unit: 'pz', quantity: '1', price: '2', user_id: @user.id)
       @recipe_food1 = RecipeFood.create(recipe_id: @recipe3.id, food_id: @food1.id, quantity: '1')

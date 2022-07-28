@@ -9,7 +9,8 @@ RSpec.describe 'Food index page', type: :feature do
       @user.save!
       @recipe = Recipe.new(name: 'Pizza', description: 'A delicious pizza', user_id: @user.id, public: true).save
       @recipe2 = Recipe.new(name: 'Apple Pie', description: 'A delicious apple pie', user_id: @user.id).save
-      @recipe3 = Recipe.new(name: 'Orange Chicken', description: 'A popular Chinese dish', user_id: @user.id, public: true).save
+      @recipe3 = Recipe.new(name: 'Orange Chicken', description: 'A popular Chinese dish', user_id: @user.id,
+                            public: true).save
       visit new_user_session_path
       fill_in 'Email', with: 'retky@test.com'
       fill_in 'Password', with: '123456'
