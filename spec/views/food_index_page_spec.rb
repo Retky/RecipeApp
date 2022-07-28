@@ -9,9 +9,9 @@ RSpec.describe 'Food index page', type: :system do
         @user.save!
         @food1 = Food.create(name: "apple", measurement_unit: "pz", price: 1.0, quantity: 1, user: @user)
         visit user_foods_path(@user)
-        fill_in 'Email', with: 'juan@hotmail.com'
-        fill_in 'Password', with: '123456'
-        click_button 'Log in'
+          fill_in 'Email', with: 'juan@hotmail.com'
+          fill_in 'Password', with: '123456'
+          click_button 'Log in'
     end
 
     it 'Shows the nav bar' do

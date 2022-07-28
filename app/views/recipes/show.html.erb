@@ -14,7 +14,7 @@
     <div class="title-recipe-container">
       <h1><%= @recipe.name %></h1>
     </div>
-    <% if can? :read, recipe %>
+    <% if can? :read, @recipe %>
     <div class="recipe-detail-container">
       <div>
         <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
@@ -22,7 +22,7 @@
         <p>Description: <%= @recipe.description %></p>
       </div>
       <div class="public-container">
-        <% if can? :destroy, recipe %>
+        <% if can? :destroy, @recipe %>
         <div class="public-label">
         <p>Public:</p>
         </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <% end %>
-    <% if can? :destroy, recipe %>
+    <% if can? :destroy, @recipe %>
     <div class="buttons-container">
       <button class="button" alt="Generate shopping list">Generate shopping list</button>
       <%= render "partials/add_ingredient_button", user: @user, recipe: @recipe %>
@@ -41,7 +41,7 @@
     <% end %>
     <hr>
     <div class="table-container">
-      <%= render "partials/ingredients_table", food: @food %>
+      <%= render "partials/ingredients_table", food: @food, recipe: @recipe %>
     </div>
   </body>
 </html>
