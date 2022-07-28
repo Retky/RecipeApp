@@ -1,0 +1,67 @@
+@import './variables.scss';
+
+body {
+  margin: 1rem 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.recipe {
+  margin: 1rem 0;
+  background-color: $orange;
+  color: #fff;
+  display: flex;
+  flex-grow: 1;
+}
+
+.recipeName {
+  padding: 1rem;
+  width: 30%;
+}
+
+.description {
+  padding: 1rem;
+  width: 70%;
+}
+
+.removeBtn {
+  background-color: unset;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
+
+  &:active {
+    color: $lightOrange;
+  }
+}
+
+.button {
+  background-color: $orange;
+  border: none;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    margin: 1rem 0;
+  }
+
+  .text_field {
+    margin: 1rem 0;
+  }
+}

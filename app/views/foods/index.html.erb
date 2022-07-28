@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipes App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "food", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="add-food-button">
+      <%= render "partials/add_food_button" %>
+    </div>
+    <div class="table-container">
+      <%= render "partials/food_table", food: @food %>
+    </div>
+  </body>
+</html>

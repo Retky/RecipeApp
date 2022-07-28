@@ -1,0 +1,111 @@
+@import './variables.scss';
+
+body {
+  margin: 1rem 2rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.link_class_button {
+  color: white;
+}
+
+.add-food-button {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+thead tr {
+  background-color: $orange;
+  color: #fff;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 15px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid $orange;
+}
+
+.button {
+  background-color: $orange;
+  border: none;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.form_container {
+  margin: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit_button_container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  width: fit-content;
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  h3 {
+    margin-right: 1rem;
+  }
+}
+
+.text_field {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.select_box {
+  margin-right: 1rem;
+}

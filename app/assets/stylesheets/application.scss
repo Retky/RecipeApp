@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// .submit_button_container_loggin {
+
+// }
+$orange: #fc6011;
+$blue: #11263c;
+$grey: #52616b;
+
+a,
+a:link {
+  color: black;
+}
+
+.link {
+  width: max-content;
+  color: #fff;
+}
+
+.form_container {
+  margin: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  width: 70%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text_field2 {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 1rem;
+  width: 90%;
+}
+
+.field2 {
+  margin: 1rem 0;
+}
+
+.nav-bar,
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-link {
+  color: $orange;
+  width: max-content;
+}
+
+.nav-bar,
+a:hover { color: #cfcfcf; }
+
+.nav-bar {
+  display: flex;
+  background-color: $blue;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.name {
+  flex: 2;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.list {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  justify-content: end;
+}
+
+.list .item {
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
