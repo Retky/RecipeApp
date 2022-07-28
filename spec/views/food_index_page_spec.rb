@@ -4,14 +4,14 @@ require 'capybara/rspec'
 RSpec.describe 'Food index page', type: :system do
   describe 'index page' do
     before :each do
-        @user = User.new(name: "juan", email: "juan@hotmail.com", password: "123456")
-        @user.skip_confirmation!
-        @user.save!
-        @food1 = Food.create(name: "apple", measurement_unit: "pz", price: 1.0, quantity: 1, user: @user)
-        visit user_foods_path(@user)
-          fill_in 'Email', with: 'juan@hotmail.com'
-          fill_in 'Password', with: '123456'
-          click_button 'Log in'
+      @user = User.new(name: 'juan', email: 'juan@hotmail.com', password: '123456')
+      @user.skip_confirmation!
+      @user.save!
+      @food1 = Food.create(name: 'apple', measurement_unit: 'pz', price: 1.0, quantity: 1, user: @user)
+      visit user_foods_path(@user)
+      fill_in 'Email', with: 'juan@hotmail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
     end
 
     it 'Shows the nav bar' do
