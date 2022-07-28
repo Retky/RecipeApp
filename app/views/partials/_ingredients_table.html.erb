@@ -16,15 +16,16 @@
         <td><%= food.name %></td>
         <td><%= recipe_food.quantity %> <%= food.measurement_unit %></td>
         <td>$ <%= value %></td>
+        <% if can? :destroy, recipe %>
         <td>
           <div class="ingredient-buttons-container">
             <%=button_to "Delete", user_recipe_recipe_food_path(@user.id, recipe_food.recipe_id, recipe_food.id), :method => :delete, class: 'delete-button' %>
             <button class="delete-button">
             <%=link_to "Modify", edit_user_recipe_recipe_food_path(@user.id, recipe_food.recipe_id, recipe_food.id), class: 'delete-button link-class-button' %>
-            <%# {:controller => :foods, :action => 'destroy', :id => food.id, :method => :delete, class: 'delete-button' %>
             </button>          
           </div>
         </td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
