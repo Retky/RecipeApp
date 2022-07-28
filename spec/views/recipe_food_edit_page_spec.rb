@@ -31,7 +31,7 @@ RSpec.describe 'Recipe food edit page', type: :system do
     end
 
     it 'Shows the add button' do
-      expect(page).to have_content('Add')
+      expect(page).to have_selector(:link_or_button, 'Add')
     end
   end
 end
